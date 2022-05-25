@@ -18,5 +18,25 @@
     <ClCompile Include="repeatEverythingForgotten.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="yearClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="leap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="additional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reversString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="yearClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="additional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

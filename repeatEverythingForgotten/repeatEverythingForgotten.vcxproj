@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +140,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="additional.cpp" />
+    <ClCompile Include="leap.cpp" />
+    <ClCompile Include="reversString.cpp" />
+    <ClCompile Include="yearClass.cpp" />
     <ClCompile Include="repeatEverythingForgotten.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="additional.h" />
+    <ClInclude Include="yearClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
