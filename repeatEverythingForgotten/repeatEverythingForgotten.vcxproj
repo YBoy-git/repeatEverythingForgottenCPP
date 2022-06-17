@@ -112,10 +112,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -125,12 +125,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,14 +141,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="additional.cpp" />
+    <ClCompile Include="clock.cpp" />
+    <ClCompile Include="commandManager.cpp" />
     <ClCompile Include="leap.cpp" />
     <ClCompile Include="reversString.cpp" />
+    <ClCompile Include="clockClas.cpp" />
     <ClCompile Include="yearClass.cpp" />
     <ClCompile Include="repeatEverythingForgotten.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="additional.h" />
+    <ClInclude Include="calleeFuncs.h" />
+    <ClInclude Include="clockClass.h" />
+    <ClInclude Include="commandManager.h" />
+    <ClInclude Include="command.h" />
+    <ClInclude Include="indents.h" />
     <ClInclude Include="yearClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
