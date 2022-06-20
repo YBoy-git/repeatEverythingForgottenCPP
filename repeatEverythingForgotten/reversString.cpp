@@ -1,39 +1,39 @@
+#include "command.h"
+#include "indents.h"
+#include "commandManager.h"
 #include <iostream>
-#include "additional.h"
+#include <string>
+#include <string_view>
 
-// namespaces
-using namespace std;
-using namespace Indents;
-
-// reversing input string and printing the result
+// Reversing input string and printing the result
 // function that can be called from selectFunction()
 void reverseString()
 {
-	// execute the function until the user enters "/exit"
+	// Execute the function until the user enters "/exit"
 	while (1)
 	{
-		const string requestMessage
-		{
+		static constexpr std::string_view requestMessage{
 			"Enter a string: "
 		};
 
-		string str;
+		std::string str{};
 
-		//printing request message
-		cout << requestMessage;
+		// Printing request message
+		std::cout << requestMessage;
 
-		// requesting for an input, with checking for "/exit" and correct datatype
-		if (requestInput(&str) == Commands::Exit)
+		// Requesting for an input, with checking for "/exit" and correct
+		// datatype
+		if (CommandManager::requestInput(reverseString, str) == Command::Exit)
 		{
-			// coming back to selectFunction()
-			cout << "Exiting reverseString()..." << smallIndent;
+			// Coming back to selectFunction()
+			std::cout << "Exiting reverseString()..." << Indents::smallIndent;
 			break;
 		}
 
-		// reversing string
+		// Reversing string
 		reverse(str.begin(), str.end());
 
-		// printing the result
-		cout << "Reversed string is \"" << str << "\"\n";
+		// Printing the result
+		std::cout << "Reversed string is \"" << str << "\"\n";
 	}
 }

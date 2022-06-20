@@ -13,30 +13,63 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Callee Functions">
+      <UniqueIdentifier>{5553f903-7a80-4260-9c25-79c7bf5d777e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Class Helpers">
+      <UniqueIdentifier>{a526b8e1-ef33-4790-a2a1-2c490ff730e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Classes">
+      <UniqueIdentifier>{240d1b9d-091f-41d3-a860-25ee687f50a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Additional">
+      <UniqueIdentifier>{5411aebe-eda4-4e33-8d57-ceece4118981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Callee Functions\Old">
+      <UniqueIdentifier>{cbdd5b4a-8cb6-4020-ad38-5162488d89b6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="repeatEverythingForgotten.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clockClas.cpp">
+      <Filter>Source Files\Class Helpers</Filter>
+    </ClCompile>
     <ClCompile Include="yearClass.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Class Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="commandManager.cpp">
+      <Filter>Source Files\Class Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="clock.cpp">
+      <Filter>Source Files\Callee Functions\Old</Filter>
     </ClCompile>
     <ClCompile Include="leap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="additional.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Callee Functions\Old</Filter>
     </ClCompile>
     <ClCompile Include="reversString.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Callee Functions\Old</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="yearClass.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="clockClass.h">
+      <Filter>Header Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="additional.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="yearClass.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="commandManager.h">
+      <Filter>Header Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="indents.h">
+      <Filter>Header Files\Additional</Filter>
+    </ClInclude>
+    <ClInclude Include="command.h">
+      <Filter>Header Files\Additional</Filter>
+    </ClInclude>
+    <ClInclude Include="calleeFuncs.h">
+      <Filter>Header Files\Additional</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

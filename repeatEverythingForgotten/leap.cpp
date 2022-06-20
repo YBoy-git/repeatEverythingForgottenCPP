@@ -1,35 +1,38 @@
+#include "yearClass.h"
+#include "command.h"
+#include "indents.h"
+#include "commandManager.h"
 #include <iostream>
-#include "yearClass.h" // for Year-class
-#include "additional.h" // for additional functional
+#include <string>
+#include <string_view>
 
-using namespace std;
-
-// checking whether the input year is leap
-// function that can be called from selectFunction()
+// Checking whether the input year is leap
+// Function that can be called from selectFunction()
 void leap()
 {
-	// execute the function until the user enters "/exit"
+	// Execute the function until the user enters "/exit"
 	while (1)
 	{
-		const string requestMessage
-		{
+		static constexpr std::string_view requestMessage{
 			"Enter a year to check: "
 		};
 
-		Year year;
+		Year year{};
 
-		// printing request message
-		cout << requestMessage;
+		// Printing request message
+		std::cout << requestMessage;
 
-		// requesting for an input, with checking for "/exit" and correct datatype
-		if (requestInput(&year) == Commands::Exit)
+		// Requesting for an input, with checking for "/exit" and correct
+		// data type
+		if (CommandManager::requestInput(leap, year) == Command::Exit)
 		{
-			// coming back to selectFunction()
-			cout << "Exiting leap()..." << Indents::smallIndent;
+			// Coming back to selectFunction()
+			std::cout << "Exiting leap()..." << Indents::smallIndent;
 			break;
 		}
 
-		// printing the result
-		cout << year << " is leap year: " << boolalpha << year.isLeap() << "\n";
+		// Printing the result
+		std::cout << year << " is leap year: " << std::boolalpha
+			<< year.isLeap() << "\n";
 	}
 }

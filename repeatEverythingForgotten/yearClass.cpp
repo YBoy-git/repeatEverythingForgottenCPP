@@ -1,32 +1,26 @@
 #include "yearClass.h"
 
-// definiting getter and setter
+// Definiting getter and setter
 unsigned long long Year::getYear() const { return m_year; }
 void Year::setYear(unsigned long long year) { m_year = year; }
 
-// overloading << operator for cout
-ostream& operator<<(ostream& out, const Year& year)
+// Overloading << operator for cout
+std::ostream& operator<<(std::ostream& out, const Year& year)
 {
 	out << year.getYear();
 	return out;
 }
 
-// overloading >> operator for cin
-istream& operator>>(istream& in, Year& year)
+// Overloading >> operator for cin
+std::istream& operator>>(std::istream& in, Year& year)
 {
-	int i;
-	cin >> i;
+	int i{};
+	in >> i;
 	year.setYear(i);
 	return in;
 }
 
-/*
-	returns true, if the year is leap, and false is isn't
-
-	the year is leap in cases:
-	the year is divisible by 400;
-	the year is divisible by 4 and is not divisible by 100/
-*/
+// Returns true if year is leap, and false if it isn't
 bool Year::isLeap()
 {
 	if (m_year % 4 == 0)
@@ -35,11 +29,11 @@ bool Year::isLeap()
 		{
 			if (m_year % 400 == 0)
 			{
-				return true; // if divisible by 400
+				return true; // If divisible by 400
 			}
-			return false; // if divisibel by 100 and not divisible by 400
+			return false; // If divisibel by 100 and not divisible by 400
 		}
-		return true; // if is divisible by 4 and is not divisible by 100
+		return true; // If is divisible by 4 and is not divisible by 100
 	}
-	return false; // if is not divisible by 4
+	return false; // If is not divisible by 4
 }

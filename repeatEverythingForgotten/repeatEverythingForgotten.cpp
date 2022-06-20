@@ -1,68 +1,72 @@
-#include "additional.h" // for Indents namespace
+#include "indents.h"
+#include "calleeFuncs.h"
+#include "commandManager.h"
 #include <iostream>
 #include <string>
 
-// fucntions defining
+// Functions defining
 void selectFunction();
 
-void leap();
-void reverseString();
-
-// namespaces
-using namespace std;
-using namespace Indents;
-
-// main
+// Main
 int main()
 {
 	selectFunction();
+
 	return 0;
 }
 
-// app logic
+// App logic
 void selectFunction()
 {
-	const string welcomeMssage
-	{
-		"Repeating everything I forgot about c++ in a year, version from the 25th of May 22" + smallIndent
-		+ "\"list\" for list of avaliable functions and their description\n"
-		+ "\"/exit\" to exit from any fucntion\n"
+	const std::string lastUpdateDate{
+		"26th of May 22"
 	};
-	cout << welcomeMssage;
-
-	const string descriptionList
-	{
-		"Avaliable functions:" + smallIndent
+	const std::string welcomeMssage{
+		"Repeating everything I forgot about c++ in a year, version from the "
+		+ lastUpdateDate + Indents::smallIndent
+		+ "\"list\" for list of available functions and their description\n"
+		"\"/exit\" to exit from any function\n"
+	};
+	const std::string descriptionList{
+		"Available functions:" + Indents::smallIndent
 		+ "leap - checking whether the input year is leap\n"
 		+ "reverseString - reversing input string and printing the result\n"
-		+ smallIndent
+		+ Indents::smallIndent
 	};
 
-	// application loop
+	std::cout << welcomeMssage;
+
+	// Application loop
 	while (1)
 	{
-		// declaring and requesting an input
-		string input;
-		getline(cin, input);
+		// Declaring and requesting an input
+		std::string input{};
+		CommandManager::handleInput(CommandManager::requestInput());
 
-		// checking for a match, in which case the corresponding function is being called
+		// Checking for a match, in which case the corresponding function is
+		// being called
 		if (input == "list")
 		{
-			cout << descriptionList;
+			std::cout << descriptionList;
 		}
 		else if (input == "leap")
 		{
-			cout << "Launching leap()..." << smallIndent;
+			std::cout << "Launching leap()..." << Indents::smallIndent;
 			leap();
 		}
 		else if (input == "reverseString")
 		{
-			cout << "Launching reverseString()..." << smallIndent;
+			std::cout << "Launching reverseString()..." << Indents::smallIndent;
 			reverseString();
 		}
-		else // if there is no matches, repeat the request
+		else if (input == "clocks")
 		{
-			cout << "function not found, retry" << smallIndent;
+			std::cout << "Launching clocks()..." << Indents::smallIndent;
+			clocks();
+		}
+		else // If there is no matches, repeat the request
+		{
+			std::cout << "function not found, retry" << Indents::smallIndent;
 		}
 	}
 }
